@@ -1,19 +1,22 @@
 const mongoose = require("mongoose");
 
-const shippingSFeesSchema = new mongoose.Schema({
-  _id: {
-    type: Number,
-  },
+const ShippingSFeesSchema = new mongoose.Schema({
   governorate: {
     type: String,
+    required: true,
   },
   fees: {
     type: Number,
+    required: true,
   },
   active: {
     type: Boolean,
+    required: true,
   },
   shippingTime: {
     type: Date,
+    required: true,
   },
 });
+
+module.exports = mongoose.model("ShippingFee", ShippingSFeesSchema);
